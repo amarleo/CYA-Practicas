@@ -1,7 +1,15 @@
-**Práctica 2: La criba de Erastóstenes**
+##Práctica 2: La criba de Erastóstenes
 
-*Centro:* Escuela Superior de Ingeniería y Tecnología
-*Asignatura:* Computabilidad y Algoritmia
-*Año:* 2020/2021
-*Autor:* Alejandro Martín de León
+### Compilación y ejecución
 
+- Compilación:
+
+Para compilar el programa, invocamos al compilador con la siguiente línea:
+
+```g++ -std=c++14 -g -Wall -o erathostenes erathostenes.cc```
+
+- Ejecución: 
+
+El programa admite por línea de comandos el *máximo* número de enteros a analizar (N números). Será de la forma: 
+
+```./erathostenes N```` (siendo N cualquier número comprendido entre [1..N])
