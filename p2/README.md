@@ -1,4 +1,4 @@
-##Práctica 2: La criba de Erastóstenes
+## Práctica 2: La criba de Erastóstenes
 
 ### Compilación y ejecución
 
@@ -10,6 +10,7 @@ Para compilar el programa, invocamos al compilador con la siguiente línea:
 
 - Ejecución: 
 
-El programa admite por línea de comandos el *máximo* número de enteros a analizar (N números). Será de la forma: 
+El programa admite por línea de comandos el **máximo** número de enteros a analizar (N números). Será de la forma: 
 
-```./erathostenes N```` (siendo N cualquier número comprendido entre [1..N])
+```./erathostenes N```` 
+*(siendo N cualquier número comprendido entre [1..N])*
