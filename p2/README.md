@@ -12,6 +12,6 @@ Para compilar el programa, invocamos al compilador con la siguiente línea:
 
 El programa admite por línea de comandos el **máximo** número de enteros a analizar (N números). Será de la forma: 
 
-```./erathostenes N```` 
+```./erathostenes N```
 
 *(siendo N cualquier número comprendido entre [1..N])*
