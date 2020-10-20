@@ -16,6 +16,7 @@ Fichero: palindrome_prod.cc
 #include <fstream>
 #include <cmath>
 
+// booleano que comprueba si un numero es capicua
 bool IsPalindrome(int number) {
   int digit, reverse = 0, number_initial = number;
   do {
@@ -31,12 +32,15 @@ bool IsPalindrome(int number) {
   }
 }
 
-void OutputFile(char *outfile, int i, int j, int resultado) {
+// funcion manejo de fichero. Abre y vuelva en el fichero los datos
+std::ofstream OutputFile(char *outfile, int i, int j, int resultado) {
     std::ofstream output;
     output.open(outfile, std::fstream::out | std::fstream::app);
     output << i << " * " << j << " = " << resultado << "\n";
+    return output;
 }
 
+// funcion ayuda, imprime por pantalla el formato correcto de ejecucion del programa
 void help() {
   std::cout << "--- AYUDA ---\nPara ejecutar el programa es necesario pasar los siguientes argumentos" << std::endl;
   std::cout << "./palindrome [NUMERO CIFRAS] [FICHERO TXT]" << std::endl;
@@ -44,6 +48,7 @@ void help() {
   std::cout << "- [FICHERO TXT]: Fichero con la extención .txt, por ejemplo: fichero.txt" << std::endl;
 }
 
+// funcion errores, comprueba si se ha producido algun error en la forma de ejecutar el programa
 bool ProgramErrors(int number_elements, char *outfile) {
   if (number_elements < 3) {
     std::cout << "ERROR: Argumentos insuficientes" << std::endl;
@@ -62,10 +67,12 @@ bool ProgramErrors(int number_elements, char *outfile) {
   }
 }
 
+// funcion que establece el rango minimo, dependiendo del numero de digitos
 int MinimumLimit(int number) {
   return pow(10, number-1);
 }
 
+// funcion que establece el rango maximo, dependiendo del numero de digitos
 int MaximumLimit(int number) {
   return pow(10, number);
 }
@@ -81,15 +88,16 @@ int main(int argc, char *argv[]) {
   int maximum_limit = MaximumLimit(number);
   int minimum_limit = MinimumLimit(number);
   int resultado = 0;
+  std::ofstream output;
 
   for (int i = minimum_limit; i < maximum_limit; i++) {
     for (int j = minimum_limit; j < maximum_limit; j++) {
       resultado = i * j;
       if ((IsPalindrome(resultado) == true) && (i <= j)) {
-        OutputFile(outfile, i, j, resultado);
+        output = OutputFile(outfile, i, j, resultado);
       }
     }
   }
-
+  output.close();
   return 0;
 }
