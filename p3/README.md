@@ -8,6 +8,10 @@ A continuación, se muestra una serie de aclaraciones sobre la compilación y ej
 *Compilacion:* 
 Situandonos en el directorio de la práctica, podemos hacer uso del programa Make. Bastaria con escribir por pantalla: 
   ```make```
+
+Ademas de esta, tenemos la opcion de compilar:
+ $ g++ -std=c++14 -g -Wall -o palindrome_prod palindrome_prod.cc
+ 
 *Ejecución:*
 Una vez compilado, procedemos a ejecutar el programa de la siguiente manera: 
   ```./palindrome [N Cifras] [*.txt]```

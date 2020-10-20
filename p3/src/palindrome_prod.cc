@@ -18,6 +18,9 @@ de los productos capicua.
 Situandonos en el directorio de la práctica, podemos hacer uso del 
 programa Make. Bastaria con escribir por pantalla: 
   make
+
+Ademas de esta, tenemos la opcion de compilar:
+ $ g++ -std=c++14 -g -Wall -o palindrome_prod palindrome_prod.cc
 - Ejecución:
 Una vez compilado, procedemos a ejecutar el programa de la siguiente 
 manera: 
@@ -61,17 +64,17 @@ void help() {
 }
 
 // funcion errores, comprueba si se ha producido algun error en la forma de ejecutar el programa
-bool ProgramErrors(int number_elements, char *outfile) {
-  if (number_elements < 3) {
+bool ProgramErrors(int number_digits, char *outfile) {
+  if (number_digits < 3) {
     std::cout << "ERROR: Argumentos insuficientes" << std::endl;
     help();
     return true;
-  } else if (number_elements > 3) {
+  } else if (number_digits > 3) {
     std::cout << "ERROR: Se han pasado demasiados argumentos." << std::endl;
     help();
     return true;
   } else {
-     if (number_elements <= 0 || isdigit(number_elements) == 1) {
+     if (number_digits <= 0 || isdigit(number_digits) == 1) {
       std::cout << "ERROR: el número introducido es erróneo. Por favor, introduzca un número entero en el rango N > 0" << std::endl;
       return true;
     }
