@@ -90,15 +90,15 @@ int MaximumLimit(int number) {
 }
 
 int main(int argc, char *argv[]) {
-  int number = std::atoi(argv[1]);
+  int number_digits = std::atoi(argv[1]);
   char *outfile = argv[2];
   std::remove(outfile);
   if (ProgramErrors(argc, outfile) == true) {
     return 1;
   }
 
-  int maximum_limit = MaximumLimit(number);
-  int minimum_limit = MinimumLimit(number);
+  int maximum_limit = MaximumLimit(number_digits);
+  int minimum_limit = MinimumLimit(number_digits);
   int resultado = 0;
   std::ofstream output;
 
