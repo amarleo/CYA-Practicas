@@ -14,6 +14,7 @@ Fichero: palindrome_prod.cc
 #include <iostream>
 #include <cctype>
 #include <fstream>
+#include <cmath>
 
 bool IsPalindrome(int number) {
   int digit, reverse = 0, number_initial = number;
@@ -44,24 +45,29 @@ void help() {
 }
 
 bool ProgramErrors(int number_elements, char *outfile) {
-
   if (number_elements < 3) {
     std::cout << "ERROR: Argumentos insuficientes" << std::endl;
     help();
     return true;
-  }
-  else if (number_elements > 3) {
+  } else if (number_elements > 3) {
     std::cout << "ERROR: Se han pasado demasiados argumentos." << std::endl;
     help();
     return true;
-  }
-  else {
+  } else {
      if (number_elements <= 0 || isdigit(number_elements) == 1) {
       std::cout << "ERROR: el número introducido es erróneo. Por favor, introduzca un número entero en el rango N > 0" << std::endl;
       return true;
     }
     return false;
   }
+}
+
+int MinimumLimit(int number) {
+  return pow(10, number-1);
+}
+
+int MaximumLimit(int number) {
+  return pow(10, number);
 }
 
 int main(int argc, char *argv[]) {
@@ -71,19 +77,19 @@ int main(int argc, char *argv[]) {
   if (ProgramErrors(argc, outfile) == true) {
     return 1;
   }
- 
-  int numero_cifras = 1;
-  for (int i = 1; i <= number ; i++) { // 10 ^ n_cifras
-    numero_cifras *= 10;
-  }
+
+  int maximum_limit = MaximumLimit(number);
+  int minimum_limit = MinimumLimit(number);
   int resultado = 0;
-  for (int i = 1; i < numero_cifras; i++) {
-    for (int j = 1; j < numero_cifras; j++) {
+
+  for (int i = minimum_limit; i < maximum_limit; i++) {
+    for (int j = minimum_limit; j < maximum_limit; j++) {
       resultado = i * j;
-      if ((IsPalindrome(resultado) == true) && (resultado > 9)) {
+      if ((IsPalindrome(resultado) == true) && (i <= j)) {
         OutputFile(outfile, i, j, resultado);
       }
     }
   }
+
   return 0;
 }
