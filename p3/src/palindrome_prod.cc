@@ -10,6 +10,18 @@ Autor: Alejandro Martín de León
 Contacto: alu0101015941@ull.edu.es
 
 Fichero: palindrome_prod.cc
+Este programa contiene el código fuente de la practica.
+Este fichero tiene como finalidad solucionar el problema planteado
+de los productos capicua. 
+
+- Compilacion: 
+Situandonos en el directorio de la práctica, podemos hacer uso del 
+programa Make. Bastaria con escribir por pantalla: 
+  make
+- Ejecución:
+Una vez compilado, procedemos a ejecutar el programa de la siguiente 
+manera: 
+  ./palindrome [N Cifras] [*.txt]
 */
 #include <iostream>
 #include <cctype>
