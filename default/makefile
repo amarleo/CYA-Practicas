@@ -1,6 +1,6 @@
 G++ := g++
 SRC_DIR := ./src
-TARGET := a.out
+TARGET := palindrome
 
 SRCS := $(shell find $(SRC_DIR) -name *.cc)
 
