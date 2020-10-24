@@ -1,6 +1,6 @@
 G++ := g++
 SRC_DIR := ./src
-TARGET := palindrome
+TARGET := fibonacci
 
 SRCS := $(shell find $(SRC_DIR) -name *.cc)
 
