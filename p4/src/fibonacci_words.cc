@@ -33,7 +33,7 @@ bool IsFile(char *file) {
 
 // funcion sobre el formato de fichero
 void FileFormatHelp() {
-
+  
 }
 
 // funcion ayuda, imprime por pantalla el formato correcto de ejecucion del programa
