@@ -12,3 +12,27 @@ Fichero: set.h
 
 Copyright 2020 Alejandro Martín de León
 */
+#include <iostream>
+#include <vector>
+
+class Set {
+private:
+  int size_;
+  std::vector<long> long_vector_;
+
+public:
+  Set(void);  
+  Set(int size, std::vector<long> longs_sets);
+  ~Set();
+
+  int GetSize(void);  
+  std::vector<long> GetVector();
+
+  void SetSize(int size);
+  
+    
+};
+
+
+
+
