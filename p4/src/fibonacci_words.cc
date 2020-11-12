@@ -69,11 +69,10 @@ bool ProgramErrors(int number_elements, char *infile, char *outfile) {
 void ReadFile(char *input_file) {
   std::ifstream file(input_file);
   std::string file_line;
- 
+  while (!std::getline(file, file_line)) {
     file >> file_line;
     std::cout << file_line << std::endl;
-
-  
+  }
 }
 
 // Función escritura de fichero
