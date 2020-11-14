@@ -7,29 +7,19 @@ Año: 2020/2021
 Autor: Alejandro Martín de León
 Contacto: alu0101015941@ull.edu.es
 
-Fichero: .h
+Fichero: states.cc
 
 
 Copyright 2020 Alejandro Martín de León
 */
+#include "../include/states.h"
 #include <iostream>
 
 
-class default
-{
-private:
-  /* data */
-public:
-  default(/* args */);
-  ~default();
-};
-
-default::default(/* args */)
-{
+States::States(/* args */) {
 }
 
-default::~default()
-{
+States::~States() {
 }
 
 

@@ -7,16 +7,20 @@ Año: 2020/2021
 Autor: Alejandro Martín de León
 Contacto: alu0101015941@ull.edu.es
 
-Fichero: set.cc
+Fichero: .h
 
 
 Copyright 2020 Alejandro Martín de León
 */
-#include "../include/default.h"
+
 #include <iostream>
 
-
-
-
+class Dfa {
+private:
+    
+public:
+    Dfa(/* args */);
+    ~Dfa();
+};
 
 
