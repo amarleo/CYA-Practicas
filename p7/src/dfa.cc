@@ -37,22 +37,82 @@ int Dfa::GetNumberSymbols() {
 
 bool Dfa::AlphabetIsAccepted(std::string alphabet, States& state, Transition& transition) {
   std::string actual_state = state.initial_state_;
-  unsigned counter = 0;
-  for(auto it = alphabet.cbegin(); it < alphabet.cend(); it++) {
-      
-    for (unsigned i = 0; i < transition.all_transitions_.size(); i++) {
+  
+  for (unsigned i = 0; i < alphabet.size(); i++) {
       std::string symbol;
-      symbol = *it;
-      if ((transition.all_transitions_[i].GetActualState() == actual_state) && (transition.all_transitions_[i].GetSymbol() == symbol) && (counter < alphabet.size())) {
-      std::cout << "actual state: " << actual_state << " symbol: " << symbol << std::endl;
-        actual_state = transition.all_transitions_[i].GetNextState();
-        //std::cout << "Actual: " << actual_state << std::endl;
-        if ((state.IsAcceptState(actual_state) == true) && (it == alphabet.cend())) {
-            return true;
+      std::string last_symbol;
+      last_symbol = alphabet[alphabet.size()-1];
+      symbol = alphabet[i];
+      for (unsigned j = 0; j < transition.all_transitions_.size(); j++) {
+        if ((transition.all_transitions_[j].GetActualState() == actual_state) && transition.all_transitions_[j].GetSymbol() == symbol) {
+            //std::cout << transition.all_transitions_[j].GetActualState() << std::endl;
+            //std::cout << transition.all_transitions_[j].GetSymbol() << std::endl;
+            actual_state = transition.all_transitions_[j].GetNextState();
+            if (state.IsAcceptState(actual_state) && (i == alphabet.size() - 1)) {
+                return true;
+            }
+            //std::cout << transition.all_transitions_[j].GetActualState() << std::endl;
+            break;
         }
-      counter++;
       }
-    }
-  }
+  } 
   return false;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+bool Dfa::AlphabetIsAccepted(std::string alphabet, States& state, Transition& transition) {
+  std::string actual_state = state.initial_state_;
+  unsigned counter = 0;
+  for (unsigned i = 0; i < alphabet.size(); i++) {
+      
+    //for (unsigned j = 0; j < transition.all_transitions_.size(); j++) {
+      std::string symbol;
+      symbol = alphabet[i];
+      std::cout << std::endl;
+      //std::cout << "Actual: " << actual_state << " Transicion " << transition.all_transitions_[i].GetActualState() << std::endl;
+      //std::cout << "Symbol: " << symbol << " Transicion " << transition.all_transitions_[i].GetActualState();
+
+      unsigned j = 0;
+        
+        while((transition.all_transitions_[j].GetActualState() != actual_state) && (transition.all_transitions_[j].GetSymbol() != symbol) && (counter < alphabet.size())) {
+          actual_state = transition.all_transitions_[j].GetNextState();
+          
+          if ((state.IsAcceptState(actual_state) == true) && (symbol == alphabet.cend())) {
+              
+              return true;
+          }
+        }
+      }
+        
+        std::cout << std::endl;
+        }
+        
+   // }
+  
+  return false;
+}*/

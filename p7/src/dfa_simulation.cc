@@ -131,7 +131,10 @@ void WriteOutputFile(std::string filename, Alphabet& alphabet, Dfa& dfa, States&
     if (file.is_open()) {
         for (std::set<std::string>::iterator it = alphabet_copy.begin(); it != alphabet_copy.end(); it++) {
             if(dfa.AlphabetIsAccepted(*it, state, transition) == true) {
-                std::cout << *it << "ES CORRECTO" << std::endl;
+                file << *it << " -> Sí" << std::endl;
+            }
+            else {
+                file << *it << " -> No" << std::endl;
             }
         }
     }
