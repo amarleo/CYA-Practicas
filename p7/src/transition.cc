@@ -21,3 +21,24 @@ Transition::Transition(/* args */) {
 
 Transition::~Transition() {
 }
+
+std::string Transition::GetActualState() {
+    return actual_state_;
+}
+
+std::string Transition::GetNextState() {
+    return next_state_;
+}
+
+void Transition::SetActualState(std::string actual_state) {
+    actual_state_ = actual_state;
+}
+
+
+void Transition::SetNextState(std::string next_state) {
+    next_state_ = next_state;
+}
+
+void Transition::SetNumberTransitions(int number_transitions) {
+    number_transitions_ = number_transitions;
+}

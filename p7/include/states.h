@@ -13,16 +13,30 @@ Fichero: .h
 Copyright 2020 Alejandro Martín de León
 */
 #include <iostream>
-
+#include <set>
+#include "transition.h"
 
 class States {
 private:
-  int stateNumber_ = 0;
-  int acceptState_ = 0;
+  int state_number_ = 0;
+  int accept_state_ = 0;
+  std::set<std::string> all_states_;
+  std::set<std::string> all_accept_states_;
+  friend class Dfa;
+  std::string q0_;
 
 public:
-  States(/* args */);
-  ~States();
+  States(void);
+  ~States(void);
+
+  void SetStateNumber(int state_number);
+  void SetAllStates(std::string all_states);
+  void SetQ0(std::string q0);
+  void SetAcceptStates(int accept_state);
+  void SetAllAcceptStates(std::string accept_states);
+
+  int GetStateNumber();
+  int GetAcceptNumber();
 };
 
 
