@@ -50,7 +50,7 @@ void Error(int parameter_number, std::string parameter_command) {
 void ReadDfaFile(std::string filename, Dfa& dfa, States& state, Transition& transition) {
 
   std::fstream file;
-  std::string line, q0;
+  std::string line, initial_state, actual_state, next_state, symbol;
   std::stringstream converter, converter2;
   int number_symbols, state_number, accept_number, transition_number;
   file.open(filename);
@@ -77,18 +77,18 @@ void ReadDfaFile(std::string filename, Dfa& dfa, States& state, Transition& tran
                   state.SetAllStates(line);
                   
               }
-              getline(file, q0);
-              state.SetQ0(q0);
+              getline(file, initial_state);
+              state.SetInitialState(initial_state);
               
               getline(file, line);
               converter.clear();
               converter << line;
               converter >> accept_number;
               state.SetAcceptStates(accept_number);
-              for (int i = 0; i < state.GetAcceptNumber(); i++) { 
+              for (int i = 0; i < accept_number; i++) { 
                   getline(file, line);
                   state.SetAllAcceptStates(line);
-                  //std::cout << line << std::endl;
+                  
               }
               getline(file, line);
               converter.clear();
@@ -96,8 +96,12 @@ void ReadDfaFile(std::string filename, Dfa& dfa, States& state, Transition& tran
               converter >> transition_number;
               transition.SetNumberTransitions(transition_number);
               for (int i = 0; i < transition_number; i++) {
+                  file >> actual_state >> symbol >> next_state;
+                  Transition transition_states(actual_state,symbol,next_state);
+                  transition.AddToTransitionSet(transition_states);
                   
               }
+              
           }
       }
   }
@@ -117,7 +121,7 @@ void ReadInputFile(std::string filename, Alphabet& alphabet) {
   file.close();
 }
 
-void WriteOutputFile(std::string filename, Alphabet& alphabet) {
+void WriteOutputFile(std::string filename, Alphabet& alphabet, Dfa& dfa, States& state, Transition& transition) {
 
     std::fstream file;
     std::string line;
@@ -125,8 +129,10 @@ void WriteOutputFile(std::string filename, Alphabet& alphabet) {
 
     file.open(filename);
     if (file.is_open()) {
-        for (std::set<std::string>::iterator i = alphabet_copy.begin(); i != alphabet_copy.end(); i++) {
-            file << *i << '\n';
+        for (std::set<std::string>::iterator it = alphabet_copy.begin(); it != alphabet_copy.end(); it++) {
+            if(dfa.AlphabetIsAccepted(*it, state, transition) == true) {
+                std::cout << *it << "ES CORRECTO" << std::endl;
+            }
         }
     }
 }
@@ -148,7 +154,7 @@ Transition transition;
 Alphabet alphabet;
 ReadDfaFile(kDfa_file, dfa, state, transition);
 ReadInputFile(kInput_file, alphabet);
-WriteOutputFile(kOutput_file, alphabet);
+WriteOutputFile(kOutput_file, alphabet, dfa, state, transition);
 
 return 0;
 }

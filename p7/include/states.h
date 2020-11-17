@@ -22,8 +22,8 @@ private:
   int accept_state_ = 0;
   std::set<std::string> all_states_;
   std::set<std::string> all_accept_states_;
-  //friend class Dfa;
-  std::string q0_;
+  friend class Dfa;
+  std::string initial_state_;
 
 public:
   States(void);
@@ -31,9 +31,10 @@ public:
 
   void SetStateNumber(int state_number);
   void SetAllStates(std::string all_states);
-  void SetQ0(std::string q0);
+  void SetInitialState(std::string initial_state);
   void SetAcceptStates(int accept_state);
   void SetAllAcceptStates(std::string accept_states);
+  bool IsAcceptState(std::string actual_state);
 
   int GetStateNumber();
   int GetAcceptNumber();
