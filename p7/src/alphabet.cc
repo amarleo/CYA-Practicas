@@ -15,23 +15,25 @@ Copyright 2020 Alejandro Martín de León
 
 #include <iostream>
 #include <string>
-#include "../include/dfa.h"
+#include "../include/alphabet.h"
 
-Dfa::Dfa(void) {
+
+Alphabet::Alphabet(/* args */)
+{
 }
 
-Dfa::~Dfa(void) {
+Alphabet::~Alphabet()
+{
 }
 
-void Dfa::SetNumberSymbols(int number_symbols) {
-   number_symbols_ = number_symbols;
+void Alphabet::SetAlphabet(std::string alphabet) {
+    all_alphabets_.insert(alphabet);
 }
 
-void Dfa::SetAlphabet(std::string symbol) {
-    alphabet_.insert(symbol);
+int Alphabet::Size() {
+    return all_alphabets_.size();
 }
 
-int Dfa::GetNumberSymbols() {
-    return number_symbols_;
+std::set<std::string> Alphabet::GetAlphabet() {
+  return all_alphabets_;
 }
-

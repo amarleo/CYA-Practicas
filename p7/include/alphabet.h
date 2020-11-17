@@ -12,26 +12,20 @@ Fichero: .h
 
 Copyright 2020 Alejandro Martín de León
 */
-
 #include <iostream>
 #include <string>
-#include "../include/dfa.h"
+#include <set>
 
-Dfa::Dfa(void) {
-}
+class Alphabet
+{
+private:
+    std::set<std::string> all_alphabets_;
+public:
+    Alphabet(/* args */);
+    ~Alphabet();
+    void SetAlphabet(std::string alphabet);
 
-Dfa::~Dfa(void) {
-}
-
-void Dfa::SetNumberSymbols(int number_symbols) {
-   number_symbols_ = number_symbols;
-}
-
-void Dfa::SetAlphabet(std::string symbol) {
-    alphabet_.insert(symbol);
-}
-
-int Dfa::GetNumberSymbols() {
-    return number_symbols_;
-}
+    int Size();
+    std::set<std::string> GetAlphabet();
+};
 

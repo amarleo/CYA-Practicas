@@ -22,7 +22,7 @@ private:
     std::string next_state_;
     std::string symbol_; 
     int number_transitions_;
-    friend class Dfa;
+    //friend class Dfa;
     // set<std::string, std::pair<std::string, std::string>> symbol_states_; Idea para almacenar tanto simbolos como los estados posibles
 public:
     Transition();

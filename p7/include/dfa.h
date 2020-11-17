@@ -24,8 +24,8 @@ private:
     int number_symbols_ = 0;
     std::set<std::string> alphabet_;
     int number_states_;
-    friend class States;
-    friend class Transition;
+    //friend class States;
+    //friend class Transition;
 
 public:
     Dfa(void);

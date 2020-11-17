@@ -14,6 +14,7 @@ Copyright 2020 Alejandro Martín de León
 */
 
 #include "../include/dfa.h"
+#include "../include/alphabet.h"
 //#include "../include/states.h"
 //#include "../include/transition.h"
 
@@ -87,7 +88,7 @@ void ReadDfaFile(std::string filename, Dfa& dfa, States& state, Transition& tran
               for (int i = 0; i < state.GetAcceptNumber(); i++) { 
                   getline(file, line);
                   state.SetAllAcceptStates(line);
-                  std::cout << line << std::endl;
+                  //std::cout << line << std::endl;
               }
               getline(file, line);
               converter.clear();
@@ -103,16 +104,31 @@ void ReadDfaFile(std::string filename, Dfa& dfa, States& state, Transition& tran
   file.close();
 }
 
-void ReadInputFile(std::string filename) {
+void ReadInputFile(std::string filename, Alphabet& alphabet) {
   std::fstream file;
   std::string line;
 
   file.open(filename);
   if (file.is_open()) {
     while(getline(file, line)) {
-      
+      alphabet.SetAlphabet(line);
     }
   }
+  file.close();
+}
+
+void WriteOutputFile(std::string filename, Alphabet& alphabet) {
+
+    std::fstream file;
+    std::string line;
+    std::set<std::string> alphabet_copy = alphabet.GetAlphabet();
+
+    file.open(filename);
+    if (file.is_open()) {
+        for (std::set<std::string>::iterator i = alphabet_copy.begin(); i != alphabet_copy.end(); i++) {
+            file << *i << '\n';
+        }
+    }
 }
 
 int main(int argc, char *argv[]) {
@@ -125,11 +141,14 @@ if ((argc < 4) || (argc > 4)) {
 }*/
 std::string kDfa_file = argv[1];
 std::string kInput_file = argv[2];
+std::string kOutput_file = argv[3];
 Dfa dfa;
 States state;
 Transition transition;
+Alphabet alphabet;
 ReadDfaFile(kDfa_file, dfa, state, transition);
-ReadInputFile(kInput_file);
+ReadInputFile(kInput_file, alphabet);
+WriteOutputFile(kOutput_file, alphabet);
 
 return 0;
 }

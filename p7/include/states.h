@@ -22,7 +22,7 @@ private:
   int accept_state_ = 0;
   std::set<std::string> all_states_;
   std::set<std::string> all_accept_states_;
-  friend class Dfa;
+  //friend class Dfa;
   std::string q0_;
 
 public:
