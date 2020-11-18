@@ -15,6 +15,12 @@
 #include <fstream>
 #include <set>
 
+/**
+ * \class DFA
+ * The motivation of this class mainly is to check the DFA algorithm
+ * 
+ */
+
 class Dfa {
 private:
   int number_symbols_ = 0;

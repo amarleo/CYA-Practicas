@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dfa',['Dfa',['../classDfa.html',1,'']]]
+  ['dfa',['DFA',['../classDFA.html',1,'DFA'],['../classDfa.html',1,'Dfa']]]
 ];

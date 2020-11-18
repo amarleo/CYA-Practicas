@@ -13,6 +13,12 @@
 #include <string>
 #include <vector>
 
+/**
+ * \class Transition
+ * The class Transition mainly is used for set a vector of Transitios, after the values were readen on 
+ * the main program dfa_simulation.cc. It contains actual and next states, and the symbol asociated
+ */
+
 class Transition {
 private:
   std::string actual_state_;
