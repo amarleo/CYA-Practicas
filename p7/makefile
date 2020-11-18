@@ -1,10 +1,8 @@
 G++ := g++
 SRC_DIR := ./src
-TARGET := fibonacci
+TARGET := dfa_simulation
 
 SRCS := $(shell find $(SRC_DIR) -name *.cc)
-
-TXT := $(shell find -name *txt)
 
 FLAGS := $()
 
@@ -13,6 +11,6 @@ $(TARGET): $(OBJS)
 
 .PHONY: clean
 clean: 
-	$(RM) $(TARGET) $(TXT)
+	$(RM) $(TARGET)
 
 -include $(DEPS)

@@ -16,16 +16,15 @@ Copyright 2020 Alejandro Martín de León
 #include <string>
 #include <set>
 
-class Alphabet
-{
+class Alphabet {
 private:
-    std::set<std::string> all_alphabets_;
+  std::set<std::string> all_alphabets_;
 public:
-    Alphabet(/* args */);
-    ~Alphabet();
-    void SetAlphabet(std::string alphabet);
-
-    int Size();
-    std::set<std::string> GetAlphabet();
+  Alphabet();
+  ~Alphabet();
+  
+  void SetAlphabet(std::string alphabet);
+  int Size();
+  std::set<std::string> GetAlphabet();
 };
 

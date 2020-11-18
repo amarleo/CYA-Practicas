@@ -10,3 +10,8 @@
 001
 00110
 024
+a
+ab
+bbab
+bbaaaa
+baaaab

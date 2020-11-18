@@ -18,20 +18,18 @@ Copyright 2020 Alejandro Martín de León
 #include "../include/alphabet.h"
 
 
-Alphabet::Alphabet(/* args */)
-{
+Alphabet::Alphabet() {
 }
 
-Alphabet::~Alphabet()
-{
+Alphabet::~Alphabet() {
 }
 
 void Alphabet::SetAlphabet(std::string alphabet) {
-    all_alphabets_.insert(alphabet);
+  all_alphabets_.insert(alphabet);
 }
 
 int Alphabet::Size() {
-    return all_alphabets_.size();
+  return all_alphabets_.size();
 }
 
 std::set<std::string> Alphabet::GetAlphabet() {

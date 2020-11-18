@@ -34,10 +34,11 @@ public:
   void SetInitialState(std::string initial_state);
   void SetAcceptStates(int accept_state);
   void SetAllAcceptStates(std::string accept_states);
-  bool IsAcceptState(std::string actual_state);
 
   int GetStateNumber();
   int GetAcceptNumber();
+
+  bool IsAcceptState(std::string actual_state);
 };
 
 

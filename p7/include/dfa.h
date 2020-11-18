@@ -21,26 +21,22 @@ Copyright 2020 Alejandro Martín de León
 
 class Dfa {
 private:
-    int number_symbols_ = 0;
-    std::set<std::string> alphabet_;
-    int number_states_;
-    //friend class States;
-    //friend class Transition;
+  int number_symbols_ = 0;
+  std::set<std::string> alphabet_;
+  int number_states_;
 
 public:
-    Dfa(void);
-    ~Dfa(void);
-
-    void SetNumberSymbols(int number_symbols);
-    void SetAlphabet(std::string symbol);
-
-    int GetNumberSymbols();
-
-    void ReadSymbols(std::string kDfa_file);
-
-    
-    bool AlphabetIsAccepted(std::string alphabet, States& state, Transition& transition);
-
+  Dfa(void);
+  ~Dfa(void);
+  
+  void SetNumberSymbols(int number_symbols);
+  void SetAlphabet(std::string symbol);
+  
+  int GetNumberSymbols();
+  
+  void ReadSymbols(std::string kDfa_file);
+  
+  bool AlphabetIsAccepted(std::string alphabet, States& state, Transition& transition);
 };
 
 
