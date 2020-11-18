@@ -35,6 +35,7 @@ public:
   int GetNumberSymbols();
   void ReadSymbols(std::string kDfa_file);
   bool AlphabetIsAccepted(std::string alphabet, States& state, Transition& transition);
+  bool DeathState(Transition& transition, States& state, unsigned i, std::string symbol);
 };
 
 

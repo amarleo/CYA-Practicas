@@ -1,31 +1,14 @@
-//  Universidad de La Laguna
-//  Grado en Ingeniería Informática
-//  Computabilidad y Algoritmia
-//
-//  Fichero de representación de un DFA
-//  Lenguaje reconocido: Cadenas binarias que representan números
-//  Enteros Divisibles por 3
-//  ER: (1(01*0)*1|0)+
-//////////////////////////////
 2
-0
+a
+b
+2
+q0
+q1
+q0
 1
-5
 q0
-cero
-0mod3
-1mod3
-2mod3
-q0
-2
-cero
-0mod3
-8
-q0 0 cero
-q0 1 1mod3
-1mod3 0 2mod3
-1mod3 1 0mod3
-2mod3 0 1mod3
-2mod3 1 2mod3
-0mod3 0 0mod3
-0mod3 1 1mod3
+4
+q0 a q1
+q0 b q0
+q1 a q0
+q1 b q1

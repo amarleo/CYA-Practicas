@@ -45,19 +45,28 @@ bool Dfa::AlphabetIsAccepted(std::string alphabet, States& state, Transition& tr
     symbol = alphabet[i];
     for (unsigned j = 0; j < transition.all_transitions_.size(); j++) {
       if ((transition.all_transitions_[j].GetActualState() == actual_state) && transition.all_transitions_[j].GetSymbol() == symbol) {
-        actual_state = transition.all_transitions_[j].GetNextState();
-        if (state.IsAcceptState(actual_state) && (i == alphabet.size() - 1)) {
-            return true;
+        if (DeathState(transition, state, i, symbol)) {
+
+          return true;
         }
-        break;
+          actual_state = transition.all_transitions_[j].GetNextState();
+          if (state.IsAcceptState(actual_state) && (i == alphabet.size() - 1)) {
+              return true;
+          }
+          break;
+        
       }
     }
   } 
   return false;
 }
 
-
-
+bool Dfa::DeathState(Transition& transition, States& state, unsigned i, std::string symbol) {
+  if ((transition.all_transitions_[i].GetActualState()) == (transition.all_transitions_[i].GetNextState()) && (transition.all_transitions_[i].GetSymbol() != symbol)) {
+    return true;
+  }
+  return false;
+}
 
 
 
