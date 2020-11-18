@@ -16,6 +16,9 @@
 #include <fstream>
 #include <sstream>
 
+/**
+ * \fn Boolean function that reveals if a string is a comment 
+ */
 bool IsComment(std::string line){
   if (line[0] != '/' && line[1] != '/') {
     return true;
@@ -25,10 +28,18 @@ bool IsComment(std::string line){
   }
 }
 
+/**
+ * \fn Boolean function that prints help to the user
+ */
+
 bool Help() {
   std::cout << "Uso: ./dfa_simulation [ARCHIVO DFA] [ARCHIVO ENTRADA] [ARCHIVO SALIDA]" <<std::endl;
   return 0;
 }
+
+/**
+ * \fn Function that controls some common executation errors, also calls to Help() function 
+ */
 
 void Error(int parameter_number, std::string parameter_command) {
   if ((parameter_command == "--help") && (parameter_number == 2)) {
@@ -40,6 +51,10 @@ void Error(int parameter_number, std::string parameter_command) {
   }
 }
 
+/**
+ * \fn Function that Read a DFA File
+ */
+
 void ReadDfaFile(std::string filename, Dfa& dfa, States& state, Transition& transition) {
   std::fstream file;
   std::string line, initial_state, actual_state, next_state, symbol;
@@ -50,7 +65,7 @@ void ReadDfaFile(std::string filename, Dfa& dfa, States& state, Transition& tran
     while(getline(file, line)) {
       if (IsComment(line)) {
         converter << line;
-        converter >> number_symbols;
+        converter >> number_symbols;  // Number of symbols
         dfa.SetNumberSymbols(number_symbols);
         for (int i = 0; i < dfa.GetNumberSymbols(); i++) {
           getline(file, line);      
@@ -59,19 +74,19 @@ void ReadDfaFile(std::string filename, Dfa& dfa, States& state, Transition& tran
         getline(file, line);
         converter.clear();
         converter << line;
-        converter >> state_number;
+        converter >> state_number;  // Number of states
         state.SetStateNumber(state_number);
         for (int i = 0; i < state.GetStateNumber(); i++) { 
           getline(file, line);
           state.SetAllStates(line);    
         }
         getline(file, initial_state);
-        state.SetInitialState(initial_state);      
+        state.SetInitialState(initial_state);  // Initial State  
         getline(file, line);
         converter.clear();
         converter << line;
         converter >> accept_number;
-        state.SetAcceptStates(accept_number);
+        state.SetAcceptStates(accept_number);  // Number of Accept States
         for (int i = 0; i < accept_number; i++) { 
           getline(file, line);
           state.SetAllAcceptStates(line);        
@@ -80,7 +95,7 @@ void ReadDfaFile(std::string filename, Dfa& dfa, States& state, Transition& tran
         converter.clear();
         converter << line;
         converter >> transition_number;
-        transition.SetNumberTransitions(transition_number);
+        transition.SetNumberTransitions(transition_number);  // Number of Transitions
         for (int i = 0; i < transition_number; i++) {
           file >> actual_state >> symbol >> next_state;
           Transition transition_states(actual_state,symbol,next_state);
@@ -91,6 +106,10 @@ void ReadDfaFile(std::string filename, Dfa& dfa, States& state, Transition& tran
   }
   file.close();
 }
+
+/**
+ * \fn Function which read the input file, container of the alphabets. 
+ */
 
 void ReadInputFile(std::string filename, Alphabet& alphabet) {
   std::fstream file;
@@ -103,6 +122,10 @@ void ReadInputFile(std::string filename, Alphabet& alphabet) {
   }
   file.close();
 }
+
+/**
+ * \fn Function that prints on the required output file  
+ */
 
 void WriteOutputFile(std::string filename, Alphabet& alphabet, Dfa& dfa, States& state, Transition& transition) {
 
@@ -122,6 +145,10 @@ void WriteOutputFile(std::string filename, Alphabet& alphabet, Dfa& dfa, States&
     }
   }
 }
+
+/**
+ * \fn Main function 
+ */
 
 int main(int argc, char *argv[]) {
   
