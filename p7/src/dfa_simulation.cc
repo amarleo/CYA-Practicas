@@ -33,7 +33,11 @@ bool IsComment(std::string line){
  */
 
 bool Help() {
-  std::cout << "Uso: ./dfa_simulation [ARCHIVO DFA] [ARCHIVO ENTRADA] [ARCHIVO SALIDA]" <<std::endl;
+  std::cout << "Uso: ./dfa_simulation [ARCHIVO DFA] [ARCHIVO ENTRADA] [ARCHIVO SALIDA]\n" << std::endl;
+  std::cout << "Interpretación de los archivos:" <<std::endl;
+  std::cout << "-> [ARCHIVO DFA]: Archivo de extensión .dfa que contiene los estados y transiciones del Autómata, así como su alfabeto y respectivos símbolos" << std::endl;
+  std::cout << "-> [ARCHIVO ENTRADA]: Archivo de extensión .txt que contiene una cadena por línea sobre el alfabeto del DFA anteriormente nombrado." << std::endl;
+  std::cout << "-> [ARCHIVO SALIDA]: Archivo de extensión .txt sobre el que se volcará el resultado. Si el nombre del fichero no existe, se creará uno nuevo. Sin embargo, si ya existe uno, se sobreescribe." << std::endl;
   return 0;
 }
 
