@@ -12,11 +12,23 @@
 #include <string>
 #include <set>
 
+/**
+ * \class Alphabet
+ * This simple class allow to organizate a set of strings that complements the code.
+ */
+
 class Alphabet {
 private:
   std::set<std::string> all_alphabets_;
 public:
+
+/**
+ * \fn Default Constructor
+ */
   Alphabet();
+/**
+ * \fn Default destructor
+ */
   ~Alphabet();
   
   void SetAlphabet(std::string alphabet);
