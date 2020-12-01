@@ -58,6 +58,7 @@ void Error(int parameter_number, std::string parameter_command) {
  * \fn Function that Read a DFA File
  */
 
+
 void ReadDfaFile(std::string filename, Dfa& dfa, States& state, Transition& transition) {
   std::fstream file;
   std::string line, initial_state, actual_state, next_state, symbol;
@@ -129,7 +130,7 @@ void ReadInputFile(std::string filename, Alphabet& alphabet) {
 /**
  * \fn Function that prints on the required output file  
  */
-
+/*
 void WriteOutputFile(std::string filename, Alphabet& alphabet, Dfa& dfa, States& state, Transition& transition) {
 
   std::ofstream file;
@@ -148,7 +149,7 @@ void WriteOutputFile(std::string filename, Alphabet& alphabet, Dfa& dfa, States&
     }
   }
 }
-
+*/
 /**
  * \fn Main function 
  */
@@ -171,9 +172,11 @@ int main(int argc, char *argv[]) {
   States state;
   Transition transition;
   Alphabet alphabet;
+  Grammar regular_grammar;
   ReadDfaFile(kInput_file, dfa, state, transition);
   //ReadInputFile(kInput_file, alphabet);
-  WriteOutputFile(kOutput_file, alphabet, dfa, state, transition);
+  //WriteOutputFile(kOutput_file, alphabet, dfa, state, transition);
+  regular_grammar = dfa.ConvertToGrammar(regular_grammar, state, transition);
   
   return 0;
 }

@@ -9,6 +9,7 @@
 */
 
 #include "states.h"
+#include "grammar.h"
 
 #include <iostream>
 #include <string>
@@ -35,6 +36,8 @@ public:
   int GetNumberSymbols();
   void ReadSymbols(std::string kDfa_file);
   bool AlphabetIsAccepted(std::string alphabet, States& state, Transition& transition);
+
+  Grammar& ConvertToGrammar(Grammar& regular_grammar, States& state, Transition& transition);
 };
 
 

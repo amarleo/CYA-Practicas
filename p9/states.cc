@@ -55,6 +55,15 @@ int States::GetStateNumber() {
   return state_number_;
 }
 
+std::string States::GetInitialState() {
+  return initial_state_;
+}
+
+
+std::set<std::string> States::GetAllStates() {
+  return all_states_;
+}
+
 /// Determina si el estado pasado por referencia se trata de un estado de aceptación
 bool States::IsAcceptState(std::string actual_state) {
   for (std::set<std::string>::iterator it = all_accept_states_.begin(); it != all_accept_states_.end(); it++) { 

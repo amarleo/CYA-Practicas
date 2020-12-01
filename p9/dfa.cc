@@ -12,7 +12,7 @@
 #include <string>
 #include "dfa.h"
 
-/// Constructor por defecto
+/// Constructor con fichero pasado por parámetro
 Dfa::Dfa(void) {
 }
 
@@ -47,6 +47,7 @@ bool Dfa::AlphabetIsAccepted(std::string alphabet, States& state, Transition& tr
       if ((transition.all_transitions_[j].GetActualState() == actual_state) && transition.all_transitions_[j].GetSymbol() == symbol) {
         actual_state = transition.all_transitions_[j].GetNextState();
         if (state.IsAcceptState(actual_state) && (i == alphabet.size() - 1)) {
+            
             return true;
         }
         break;
@@ -54,4 +55,31 @@ bool Dfa::AlphabetIsAccepted(std::string alphabet, States& state, Transition& tr
     }
   } 
   return false;
+}
+
+Grammar& Dfa::ConvertToGrammar(Grammar& grammar, States& state, Transition& transition) {
+
+  std::string initial_noterminal = state.GetInitialState();
+  grammar.SetInitialNoTerminal(initial_noterminal);
+
+  std::set<std::string>::iterator it = alphabet_.begin(); 
+  std::string alphabet;
+  int flag = 0;
+  while (flag == 0) {
+    alphabet = *it;
+    flag++;
+  }
+
+  grammar.SetAlphabet(alphabet);
+  std::set<std::string> collection_noterminal = state.GetAllStates();
+  grammar.SetNoTerminals(collection_noterminal);
+
+  std::string production;
+
+  for (unsigned i = 0; i < transition.all_transitions_.size() - 1 ; i++) {
+    production = transition.all_transitions_[i].GetActualState() + " ->" + transition.all_transitions_[i].GetSymbol() + transition.all_transitions_[i].GetNextState();
+    grammar.SetProductions(production);
+  }
+  
+  return grammar;
 }

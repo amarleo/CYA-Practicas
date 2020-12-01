@@ -37,6 +37,8 @@ public:
 
   int GetStateNumber();
   int GetAcceptNumber();
+  std::string GetInitialState();
+  std::set<std::string> GetAllStates();
 
   bool IsAcceptState(std::string actual_state);
 };
