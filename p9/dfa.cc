@@ -64,21 +64,31 @@ Grammar& Dfa::ConvertToGrammar(Grammar& grammar, States& state, Transition& tran
 
   std::set<std::string>::iterator it = alphabet_.begin(); 
   std::string alphabet;
-  int flag = 0;
-  while (flag == 0) {
+
+  while (it != alphabet_.end()) {
     alphabet = *it;
-    flag++;
+    grammar.SetAlphabet(alphabet);
+    it++;
   }
 
-  grammar.SetAlphabet(alphabet);
+  
   std::set<std::string> collection_noterminal = state.GetAllStates();
   grammar.SetNoTerminals(collection_noterminal);
 
   std::string production;
 
-  for (unsigned i = 0; i < transition.all_transitions_.size() - 1 ; i++) {
-    production = transition.all_transitions_[i].GetActualState() + " ->" + transition.all_transitions_[i].GetSymbol() + transition.all_transitions_[i].GetNextState();
+  for (unsigned i = 0; i < transition.all_transitions_.size() ; i++) {
+    production = transition.all_transitions_[i].GetActualState() + " -> " + transition.all_transitions_[i].GetSymbol() + transition.all_transitions_[i].GetNextState();
     grammar.SetProductions(production);
+    //std::string right_side_rule = transition.all_transitions_[i].GetNextState();
+    /*
+    if ((transition.all_transitions_[i+1].GetActualState() != transition.all_transitions_[i].GetActualState()) && (state.IsAcceptState(right_side_rule))) {
+      production = transition.all_transitions_[i].GetActualState() + " -> ~";
+      grammar.SetProductions(production);
+      grammar.IncreaseNumberProductions();
+    }
+    */
+    grammar.IncreaseNumberProductions();
   }
   
   return grammar;

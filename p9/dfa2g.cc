@@ -172,11 +172,12 @@ int main(int argc, char *argv[]) {
   States state;
   Transition transition;
   Alphabet alphabet;
-  Grammar regular_grammar;
+  Grammar grammar;
   ReadDfaFile(kInput_file, dfa, state, transition);
   //ReadInputFile(kInput_file, alphabet);
   //WriteOutputFile(kOutput_file, alphabet, dfa, state, transition);
-  regular_grammar = dfa.ConvertToGrammar(regular_grammar, state, transition);
-  
+  grammar = dfa.ConvertToGrammar(grammar, state, transition);
+  grammar.writeGrammarFile(kOutput_file, grammar);
+
   return 0;
 }
