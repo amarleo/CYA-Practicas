@@ -46,6 +46,7 @@ bool Dfa::AlphabetIsAccepted(std::string alphabet, States& state, Transition& tr
       if ((transition.all_transitions_[j].GetActualState() == actual_state) && transition.all_transitions_[j].GetSymbol() == symbol) {
         actual_state = transition.all_transitions_[j].GetNextState();
         if (state.IsAcceptState(actual_state) && (i == alphabet.size() - 1)) {
+            
             return true;
         }
         break;
@@ -60,8 +61,8 @@ bool Dfa::AlphabetIsAccepted(std::string alphabet, States& state, Transition& tr
 /**
  * @brief Método Conversión de un DFA a una Gramática Regular
  * @param (grammar) Se trata de una referencia a un objeto de la clase Grammar
- * @param (state) Se trata de una referencia a un objeto de la clase States
- * @param (transition) Se trata de una referencia a un objeto de la clase Transition
+ *@param (state) Se trata de una referencia a un objeto de la clase States
+ *@param (transition) Se trata de una referencia a un objeto de la clase Transition
  * 
  * Método de la clase DFA que permite la conversión del Dfa leido desde el fichero
  * en una Gramática Regular
@@ -89,14 +90,14 @@ Grammar& Dfa::ConvertToGrammar(Grammar& grammar, States& state, Transition& tran
     production = transition.all_transitions_[i].GetActualState() + " -> " + transition.all_transitions_[i].GetSymbol() + transition.all_transitions_[i].GetNextState();
     grammar.SetProductions(production);
     std::string right_side_rule = transition.all_transitions_[i].GetNextState();
-    /*
-    if ((state.IsAcceptState(right_side_rule))) {
+    if ( (state.IsAcceptState(right_side_rule))) {
       production = transition.all_transitions_[i].GetActualState() + " -> ~";
       grammar.SetProductions(production);
       grammar.IncreaseNumberProductions();
     }
-    */
+    
     grammar.IncreaseNumberProductions();
   }
   return grammar;
 }
+
