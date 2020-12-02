@@ -1,0 +1,83 @@
+\hypertarget{classDfa}{}\section{Dfa Class Reference}
+\label{classDfa}\index{Dfa@{Dfa}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDfa_a89c2bffef86525363c275b3fe60fc57f}{Dfa} (void)
+\begin{DoxyCompactList}\small\item\em Constructor con fichero pasado por parámetro. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDfa_ab7a9c61dfb3467e64d8e5d11b1f08e49}\label{classDfa_ab7a9c61dfb3467e64d8e5d11b1f08e49}} 
+\hyperlink{classDfa_ab7a9c61dfb3467e64d8e5d11b1f08e49}{$\sim$\+Dfa} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDfa_ac022a12536c2a855066fdfd85fba5ed9}\label{classDfa_ac022a12536c2a855066fdfd85fba5ed9}} 
+void \hyperlink{classDfa_ac022a12536c2a855066fdfd85fba5ed9}{Set\+Number\+Symbols} (int number\+\_\+symbols)
+\begin{DoxyCompactList}\small\item\em Establece el numero de simbolos. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDfa_a094525697d759c4b5b36bf562d920916}\label{classDfa_a094525697d759c4b5b36bf562d920916}} 
+void \hyperlink{classDfa_a094525697d759c4b5b36bf562d920916}{Set\+Alphabet} (std\+::string symbol)
+\begin{DoxyCompactList}\small\item\em Inserta en el set cada uno de los simbolos. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDfa_a21239eac92e02d748bdc5cee0c52b831}\label{classDfa_a21239eac92e02d748bdc5cee0c52b831}} 
+int \hyperlink{classDfa_a21239eac92e02d748bdc5cee0c52b831}{Get\+Number\+Symbols} ()
+\begin{DoxyCompactList}\small\item\em Devuelve el numero de simbolos que contiene el alfabeto. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDfa_ac596e302028cb885e1a8eae2f1f60e69}\label{classDfa_ac596e302028cb885e1a8eae2f1f60e69}} 
+void {\bfseries Read\+Symbols} (std\+::string k\+Dfa\+\_\+file)
+\item 
+\mbox{\Hypertarget{classDfa_a0de3553aca8cf0329bf12a7b1acaa291}\label{classDfa_a0de3553aca8cf0329bf12a7b1acaa291}} 
+bool \hyperlink{classDfa_a0de3553aca8cf0329bf12a7b1acaa291}{Alphabet\+Is\+Accepted} (std\+::string alphabet, \hyperlink{classStates}{States} \&state, \hyperlink{classTransition}{Transition} \&transition)
+\begin{DoxyCompactList}\small\item\em funcion booleana que determina si una cadena llega a un estado de aceptación \end{DoxyCompactList}\item 
+\hyperlink{classGrammar}{Grammar} \& \hyperlink{classDfa_a9b9e4f4e3ef305932304aeadb10248b3}{Convert\+To\+Grammar} (\hyperlink{classGrammar}{Grammar} \&regular\+\_\+grammar, \hyperlink{classStates}{States} \&state, \hyperlink{classTransition}{Transition} \&transition)
+\begin{DoxyCompactList}\small\item\em Método Conversión de un \hyperlink{classDFA}{D\+FA} a una Gramática Regular. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDfa_a89c2bffef86525363c275b3fe60fc57f}\label{classDfa_a89c2bffef86525363c275b3fe60fc57f}} 
+\index{Dfa@{Dfa}!Dfa@{Dfa}}
+\index{Dfa@{Dfa}!Dfa@{Dfa}}
+\subsubsection{\texorpdfstring{Dfa()}{Dfa()}}
+{\footnotesize\ttfamily Dfa\+::\+Dfa (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Constructor con fichero pasado por parámetro. 
+
+\begin{DoxyNote}{Note}
+P\+R\+O\+J\+E\+CT H\+E\+A\+D\+ER 
+
+Proyect\+: \hyperlink{classDFA}{D\+FA} to \hyperlink{classGrammar}{Grammar}. 
+
+subject\+: Computabilidad y Algoritmia 
+
+Author\+: Alejandro Martín de León 
+
+Contact\+: \href{mailto:alu0101015941@ull.edu.es}{\tt alu0101015941@ull.\+edu.\+es} 
+
+Date\+: 2/12/2020 
+
+Copyright 2020 Alejandro Martín de León 
+\end{DoxyNote}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDfa_a9b9e4f4e3ef305932304aeadb10248b3}\label{classDfa_a9b9e4f4e3ef305932304aeadb10248b3}} 
+\index{Dfa@{Dfa}!Convert\+To\+Grammar@{Convert\+To\+Grammar}}
+\index{Convert\+To\+Grammar@{Convert\+To\+Grammar}!Dfa@{Dfa}}
+\subsubsection{\texorpdfstring{Convert\+To\+Grammar()}{ConvertToGrammar()}}
+{\footnotesize\ttfamily \hyperlink{classGrammar}{Grammar} \& Dfa\+::\+Convert\+To\+Grammar (\begin{DoxyParamCaption}\item[{\hyperlink{classGrammar}{Grammar} \&}]{grammar,  }\item[{\hyperlink{classStates}{States} \&}]{state,  }\item[{\hyperlink{classTransition}{Transition} \&}]{transition }\end{DoxyParamCaption})}
+
+
+
+Método Conversión de un \hyperlink{classDFA}{D\+FA} a una Gramática Regular. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em (grammar)} & Se trata de una referencia a un objeto de la clase \hyperlink{classGrammar}{Grammar} \\
+\hline
+{\em (state)} & Se trata de una referencia a un objeto de la clase \hyperlink{classStates}{States} \\
+\hline
+{\em (transition)} & Se trata de una referencia a un objeto de la clase \hyperlink{classTransition}{Transition}\\
+\hline
+\end{DoxyParams}
+Método de la clase \hyperlink{classDFA}{D\+FA} que permite la conversión del \hyperlink{classDfa}{Dfa} leido desde el fichero en una Gramática Regular 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+dfa.\+h\item 
+dfa.\+cc\end{DoxyCompactItemize}

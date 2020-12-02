@@ -1,0 +1,99 @@
+\hypertarget{classTransition}{}\section{Transition Class Reference}
+\label{classTransition}\index{Transition@{Transition}}
+
+
+{\ttfamily \#include $<$transition.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTransition_a73b44b2338b11807f77b620a3e810f92}{Transition} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTransition_ace14152c505810535ce6c2166a92582f}\label{classTransition_ace14152c505810535ce6c2166a92582f}} 
+\hyperlink{classTransition_ace14152c505810535ce6c2166a92582f}{Transition} (std\+::string actual\+\_\+state, std\+::string symbol, std\+::string next\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Constructor parametrizado. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTransition_ab66e8623f23c71cd4f07c69596427bab}\label{classTransition_ab66e8623f23c71cd4f07c69596427bab}} 
+\hyperlink{classTransition_ab66e8623f23c71cd4f07c69596427bab}{$\sim$\+Transition} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTransition_af562921b1f4c018dbd23175f068177dd}\label{classTransition_af562921b1f4c018dbd23175f068177dd}} 
+std\+::string \hyperlink{classTransition_af562921b1f4c018dbd23175f068177dd}{Get\+Actual\+State} ()
+\begin{DoxyCompactList}\small\item\em obten el estado actual \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTransition_a3ffdd67d98d0c6158c73b691f10e4392}\label{classTransition_a3ffdd67d98d0c6158c73b691f10e4392}} 
+std\+::string \hyperlink{classTransition_a3ffdd67d98d0c6158c73b691f10e4392}{Get\+Next\+State} ()
+\begin{DoxyCompactList}\small\item\em Obten el estado siguiente. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTransition_a21056331ad32e3f32370127c6cf4be24}\label{classTransition_a21056331ad32e3f32370127c6cf4be24}} 
+std\+::string \hyperlink{classTransition_a21056331ad32e3f32370127c6cf4be24}{Get\+Symbol} ()
+\begin{DoxyCompactList}\small\item\em Obten el simbolo en el estado actual. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTransition_a7885360c211f7f35ff72f9a3b868aa35}\label{classTransition_a7885360c211f7f35ff72f9a3b868aa35}} 
+void \hyperlink{classTransition_a7885360c211f7f35ff72f9a3b868aa35}{Set\+Actual\+State} (std\+::string actual\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Establece el estado actual del \hyperlink{classDFA}{D\+FA}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTransition_ae5d10fa5a007a2315b5ded4515ff88f0}\label{classTransition_ae5d10fa5a007a2315b5ded4515ff88f0}} 
+void \hyperlink{classTransition_ae5d10fa5a007a2315b5ded4515ff88f0}{Set\+Next\+State} (std\+::string next\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Establece el estado siguiente. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTransition_a0040651c4cc7205f51158d2c5c8bab16}\label{classTransition_a0040651c4cc7205f51158d2c5c8bab16}} 
+void \hyperlink{classTransition_a0040651c4cc7205f51158d2c5c8bab16}{Set\+Symbol} (std\+::string symbol)
+\begin{DoxyCompactList}\small\item\em Establece el simbolo correspondiente al estado actual. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTransition_ab7bee49e1cdf54cf7dd5f82c3fbeb93f}\label{classTransition_ab7bee49e1cdf54cf7dd5f82c3fbeb93f}} 
+void \hyperlink{classTransition_ab7bee49e1cdf54cf7dd5f82c3fbeb93f}{Set\+Number\+Transitions} (int number\+\_\+transitions)
+\begin{DoxyCompactList}\small\item\em Establece el numero de transiciones del \hyperlink{classDFA}{D\+FA}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTransition_a03732624209bd0e25ee8dd57f113304c}\label{classTransition_a03732624209bd0e25ee8dd57f113304c}} 
+void \hyperlink{classTransition_a03732624209bd0e25ee8dd57f113304c}{Add\+To\+Transition\+Set} (\hyperlink{classTransition}{Transition} \&transition)
+\begin{DoxyCompactList}\small\item\em Añade la transicion al vector de transiciones. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTransition_a21ab7f6ff9e8704242e18ecfde24a901}\label{classTransition_a21ab7f6ff9e8704242e18ecfde24a901}} 
+class {\bfseries Dfa}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyNote}{Note}
+P\+R\+O\+J\+E\+CT H\+E\+A\+D\+ER 
+
+Proyect\+: \hyperlink{classDFA}{D\+FA} 
+
+subject\+: Computabilidad y Algoritmia 
+
+Author\+: Alejandro Martín de León 
+
+Contact\+: \href{mailto:alu0101015941@ull.edu.es}{\tt alu0101015941@ull.\+edu.\+es} 
+
+Date\+: 18/11/2020 
+
+Copyright 2020 Alejandro Martín de León
+\end{DoxyNote}
+The class \hyperlink{classTransition}{Transition} mainly is used for set a vector of Transitios, after the values were readen on the main program dfa\+\_\+simulation.\+cc. It contains actual and next states, and the symbol asociated 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTransition_a73b44b2338b11807f77b620a3e810f92}\label{classTransition_a73b44b2338b11807f77b620a3e810f92}} 
+\index{Transition@{Transition}!Transition@{Transition}}
+\index{Transition@{Transition}!Transition@{Transition}}
+\subsubsection{\texorpdfstring{Transition()}{Transition()}}
+{\footnotesize\ttfamily Transition\+::\+Transition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor por defecto. 
+
+\begin{DoxyNote}{Note}
+P\+R\+O\+J\+E\+CT H\+E\+A\+D\+ER 
+
+Proyect\+: \hyperlink{classDFA}{D\+FA} to \hyperlink{classGrammar}{Grammar}. 
+
+subject\+: Computabilidad y Algoritmia 
+
+Author\+: Alejandro Martín de León 
+
+Contact\+: \href{mailto:alu0101015941@ull.edu.es}{\tt alu0101015941@ull.\+edu.\+es} 
+
+Date\+: 2/12/2020 
+
+Copyright 2020 Alejandro Martín de León 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+transition.\+h\item 
+transition.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,80 @@
+\hypertarget{classStates}{}\section{States Class Reference}
+\label{classStates}\index{States@{States}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classStates_a8cf0b9ef14edb0704c74ac62ea338eab}{States} (void)
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStates_a7b937978429b4c240ec3ba50dc5b0ab5}\label{classStates_a7b937978429b4c240ec3ba50dc5b0ab5}} 
+\hyperlink{classStates_a7b937978429b4c240ec3ba50dc5b0ab5}{$\sim$\+States} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStates_a5a2bc9b7cc865d41d22d46f3171942c8}\label{classStates_a5a2bc9b7cc865d41d22d46f3171942c8}} 
+void \hyperlink{classStates_a5a2bc9b7cc865d41d22d46f3171942c8}{Set\+State\+Number} (int state\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Establece el número de estados. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStates_ac84bd2eaecd487ec1ec5f935810262bd}\label{classStates_ac84bd2eaecd487ec1ec5f935810262bd}} 
+void \hyperlink{classStates_ac84bd2eaecd487ec1ec5f935810262bd}{Set\+All\+States} (std\+::string all\+\_\+states)
+\begin{DoxyCompactList}\small\item\em Inserta en el set de todos los estados, cualquier estado. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStates_a5a59b1d5e57a4a77053521c180259328}\label{classStates_a5a59b1d5e57a4a77053521c180259328}} 
+void \hyperlink{classStates_a5a59b1d5e57a4a77053521c180259328}{Set\+Initial\+State} (std\+::string initial\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Establece el estado inicial. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStates_ac3038ae4bc800dd96e8f71186f3badbf}\label{classStates_ac3038ae4bc800dd96e8f71186f3badbf}} 
+void \hyperlink{classStates_ac3038ae4bc800dd96e8f71186f3badbf}{Set\+Accept\+States} (int accept\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Establece y almacena los estados de aceptación. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStates_a69e75840154231517b78ef9e6fcedfc1}\label{classStates_a69e75840154231517b78ef9e6fcedfc1}} 
+void \hyperlink{classStates_a69e75840154231517b78ef9e6fcedfc1}{Set\+All\+Accept\+States} (std\+::string accept\+\_\+states)
+\begin{DoxyCompactList}\small\item\em Inserta en el set que contiene todos los estados, un estado individual. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStates_a4e73e71b7f53665abbfd154b72f39d08}\label{classStates_a4e73e71b7f53665abbfd154b72f39d08}} 
+int \hyperlink{classStates_a4e73e71b7f53665abbfd154b72f39d08}{Get\+State\+Number} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el numero de estados. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStates_a77328d7648bbe13bf6eada96850b444c}\label{classStates_a77328d7648bbe13bf6eada96850b444c}} 
+int \hyperlink{classStates_a77328d7648bbe13bf6eada96850b444c}{Get\+Accept\+Number} ()
+\begin{DoxyCompactList}\small\item\em Obtiene el número de estados de aceptacion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStates_a91a78f6240e62c28c12c8a1a0b132c55}\label{classStates_a91a78f6240e62c28c12c8a1a0b132c55}} 
+std\+::string {\bfseries Get\+Initial\+State} ()
+\item 
+\mbox{\Hypertarget{classStates_ab1a3da48e6dd1ecadffe23c7db057769}\label{classStates_ab1a3da48e6dd1ecadffe23c7db057769}} 
+std\+::set$<$ std\+::string $>$ {\bfseries Get\+All\+States} ()
+\item 
+\mbox{\Hypertarget{classStates_a00c6a25604f801935f924ef5c89b3eda}\label{classStates_a00c6a25604f801935f924ef5c89b3eda}} 
+bool \hyperlink{classStates_a00c6a25604f801935f924ef5c89b3eda}{Is\+Accept\+State} (std\+::string actual\+\_\+state)
+\begin{DoxyCompactList}\small\item\em Determina si el estado pasado por referencia se trata de un estado de aceptación. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStates_a21ab7f6ff9e8704242e18ecfde24a901}\label{classStates_a21ab7f6ff9e8704242e18ecfde24a901}} 
+class {\bfseries Dfa}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStates_a8cf0b9ef14edb0704c74ac62ea338eab}\label{classStates_a8cf0b9ef14edb0704c74ac62ea338eab}} 
+\index{States@{States}!States@{States}}
+\index{States@{States}!States@{States}}
+\subsubsection{\texorpdfstring{States()}{States()}}
+{\footnotesize\ttfamily States\+::\+States (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Constructor por defecto. 
+
+\begin{DoxyNote}{Note}
+P\+R\+O\+J\+E\+CT H\+E\+A\+D\+ER 
+
+Proyect\+: \hyperlink{classDFA}{D\+FA} to \hyperlink{classGrammar}{Grammar}. 
+
+subject\+: Computabilidad y Algoritmia 
+
+Author\+: Alejandro Martín de León 
+
+Contact\+: \href{mailto:alu0101015941@ull.edu.es}{\tt alu0101015941@ull.\+edu.\+es} 
+
+Date\+: 2/12/2020 
+
+Copyright 2020 Alejandro Martín de León 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+states.\+h\item 
+states.\+cc\end{DoxyCompactItemize}

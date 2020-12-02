@@ -1,0 +1,153 @@
+\hypertarget{classGrammar}{}\section{Grammar Class Reference}
+\label{classGrammar}\index{Grammar@{Grammar}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGrammar_aa201250a002a7d07d398fee189a74427}{Grammar} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
+\hyperlink{classGrammar_abdecbf25f0c6b60706453ab86c3f9643}{Grammar} (std\+::set$<$ std\+::string $>$ alphabet, std\+::set$<$ std\+::string $>$ collection\+\_\+noterminal, std\+::string initial\+\_\+noterminal, std\+::set$<$ std\+::string $>$ collection\+\_\+productions)
+\begin{DoxyCompactList}\small\item\em Constructo parametrizado. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGrammar_a60e8bade0190ee9830d9c600e4216b36}\label{classGrammar_a60e8bade0190ee9830d9c600e4216b36}} 
+\hyperlink{classGrammar_a60e8bade0190ee9830d9c600e4216b36}{$\sim$\+Grammar} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+void \hyperlink{classGrammar_abd0efb1c23b6c09443b996adbb2d82be}{Set\+Alphabet} (std\+::string alphabet)
+\begin{DoxyCompactList}\small\item\em Método set. \end{DoxyCompactList}\item 
+void \hyperlink{classGrammar_af8f0dda3f50275d6dac186d6579e9d23}{Set\+No\+Terminals} (std\+::set$<$ std\+::string $>$ collection\+\_\+noterminal)
+\begin{DoxyCompactList}\small\item\em Método set. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGrammar_ab8e7d6fbdbbb97205f9baabab8f900cc}\label{classGrammar_ab8e7d6fbdbbb97205f9baabab8f900cc}} 
+void \hyperlink{classGrammar_ab8e7d6fbdbbb97205f9baabab8f900cc}{Set\+Initial\+No\+Terminal} (std\+::string initial\+\_\+noterminal)
+\begin{DoxyCompactList}\small\item\em Método Set que establece el símbolo de arranque. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGrammar_a4e1bc66eeb343b4125b8398d843eb8b8}\label{classGrammar_a4e1bc66eeb343b4125b8398d843eb8b8}} 
+void \hyperlink{classGrammar_a4e1bc66eeb343b4125b8398d843eb8b8}{Set\+Productions} (std\+::string production)
+\begin{DoxyCompactList}\small\item\em Método Set que inserta el parámetro de tipo string en una coleccion que contendrá todos los productos. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGrammar_af927508658f5bf62dd1fcf5926c9ca3a}\label{classGrammar_af927508658f5bf62dd1fcf5926c9ca3a}} 
+void {\bfseries Increase\+Number\+Productions} ()
+\item 
+\mbox{\Hypertarget{classGrammar_a6a80e86306a800d00db406c8aaccc6c0}\label{classGrammar_a6a80e86306a800d00db406c8aaccc6c0}} 
+int \hyperlink{classGrammar_a6a80e86306a800d00db406c8aaccc6c0}{Get\+Number\+Products} ()
+\begin{DoxyCompactList}\small\item\em Método Get, retorna el número de producciones. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGrammar_ad56e1575da993f7bb561991666272a94}\label{classGrammar_ad56e1575da993f7bb561991666272a94}} 
+int \hyperlink{classGrammar_ad56e1575da993f7bb561991666272a94}{Get\+Alphabet\+Size} ()
+\begin{DoxyCompactList}\small\item\em Método Get, retorna el tamaño del alfabeto o el número de simbolos terminales. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGrammar_a155b5ce101e01e7ae0288696306d964a}\label{classGrammar_a155b5ce101e01e7ae0288696306d964a}} 
+int \hyperlink{classGrammar_a155b5ce101e01e7ae0288696306d964a}{Get\+No\+Terminal\+Size} ()
+\begin{DoxyCompactList}\small\item\em Método Get, retorna el tamaño del conjunto de símbolos no terminales. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGrammar_a1163834f6d65a507ef16854c66edbf48}\label{classGrammar_a1163834f6d65a507ef16854c66edbf48}} 
+std\+::string \hyperlink{classGrammar_a1163834f6d65a507ef16854c66edbf48}{Get\+Initial\+No\+Terminal} ()
+\begin{DoxyCompactList}\small\item\em Método Get, retorna el símbolo de arranque. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGrammar_a23659466733a36d68b9864cd69f9b7c8}\label{classGrammar_a23659466733a36d68b9864cd69f9b7c8}} 
+std\+::set$<$ std\+::string $>$ \hyperlink{classGrammar_a23659466733a36d68b9864cd69f9b7c8}{Get\+Alphabet} ()
+\begin{DoxyCompactList}\small\item\em Método Get, retorna el alfabeto o símbolos termnales, se trata de un set de strings. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGrammar_ad9aab9585932c1dfa779937460843f82}\label{classGrammar_ad9aab9585932c1dfa779937460843f82}} 
+std\+::set$<$ std\+::string $>$ \hyperlink{classGrammar_ad9aab9585932c1dfa779937460843f82}{Get\+Collection\+No\+Terminal} ()
+\begin{DoxyCompactList}\small\item\em Método Get, retorna El conjunto de simbolos no terminales. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGrammar_a027ab18d2e27e12b67991b408535b427}\label{classGrammar_a027ab18d2e27e12b67991b408535b427}} 
+std\+::set$<$ std\+::string $>$ \hyperlink{classGrammar_a027ab18d2e27e12b67991b408535b427}{Get\+Collection\+Productions} ()
+\begin{DoxyCompactList}\small\item\em Método Get, retorna el conjunto de producciones. \end{DoxyCompactList}\item 
+void \hyperlink{classGrammar_a1b8915ce3d5677b2bf7272dd59b89512}{write\+Grammar\+File} (std\+::string file, \hyperlink{classGrammar}{Grammar} \&grammar)
+\begin{DoxyCompactList}\small\item\em Método Escritura de la Gramática. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGrammar_aa201250a002a7d07d398fee189a74427}\label{classGrammar_aa201250a002a7d07d398fee189a74427}} 
+\index{Grammar@{Grammar}!Grammar@{Grammar}}
+\index{Grammar@{Grammar}!Grammar@{Grammar}}
+\subsubsection{\texorpdfstring{Grammar()}{Grammar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Grammar\+::\+Grammar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor por defecto. 
+
+\begin{DoxyNote}{Note}
+P\+R\+O\+J\+E\+CT H\+E\+A\+D\+ER 
+
+Proyect\+: \hyperlink{classDFA}{D\+FA} to \hyperlink{classGrammar}{Grammar}. 
+
+subject\+: Computabilidad y Algoritmia 
+
+Author\+: Alejandro Martín de León 
+
+Contact\+: \href{mailto:alu0101015941@ull.edu.es}{\tt alu0101015941@ull.\+edu.\+es} 
+
+Date\+: 2/12/2020 
+
+Copyright 2020 Alejandro Martín de León 
+\end{DoxyNote}
+\mbox{\Hypertarget{classGrammar_abdecbf25f0c6b60706453ab86c3f9643}\label{classGrammar_abdecbf25f0c6b60706453ab86c3f9643}} 
+\index{Grammar@{Grammar}!Grammar@{Grammar}}
+\index{Grammar@{Grammar}!Grammar@{Grammar}}
+\subsubsection{\texorpdfstring{Grammar()}{Grammar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Grammar\+::\+Grammar (\begin{DoxyParamCaption}\item[{std\+::set$<$ std\+::string $>$}]{alphabet,  }\item[{std\+::set$<$ std\+::string $>$}]{collection\+\_\+noterminal,  }\item[{std\+::string}]{initial\+\_\+noterminal,  }\item[{std\+::set$<$ std\+::string $>$}]{collection\+\_\+productions }\end{DoxyParamCaption})}
+
+
+
+Constructo parametrizado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em (alphabet)} & Tipo de dato set de strings que contiene todos y cada uno de los simbolos \\
+\hline
+{\em (collection\+\_\+noterminal)} & Contiene el conjunto de símbolos no terminales \\
+\hline
+{\em (initial\+\_\+noterminal)} & Contiene el símbolo de arranque \\
+\hline
+{\em (collection\+\_\+productions)} & Contiene el conjunto de Producciones producidas por el programa \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGrammar_abd0efb1c23b6c09443b996adbb2d82be}\label{classGrammar_abd0efb1c23b6c09443b996adbb2d82be}} 
+\index{Grammar@{Grammar}!Set\+Alphabet@{Set\+Alphabet}}
+\index{Set\+Alphabet@{Set\+Alphabet}!Grammar@{Grammar}}
+\subsubsection{\texorpdfstring{Set\+Alphabet()}{SetAlphabet()}}
+{\footnotesize\ttfamily void Grammar\+::\+Set\+Alphabet (\begin{DoxyParamCaption}\item[{std\+::string}]{alphabet }\end{DoxyParamCaption})}
+
+
+
+Método set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em (alphabet)} & Tipo de dato set de strings que contiene todos y cada uno de los simbolos\\
+\hline
+\end{DoxyParams}
+Inserta símbolos de tipo string en el alfabeto correspondiente. \mbox{\Hypertarget{classGrammar_af8f0dda3f50275d6dac186d6579e9d23}\label{classGrammar_af8f0dda3f50275d6dac186d6579e9d23}} 
+\index{Grammar@{Grammar}!Set\+No\+Terminals@{Set\+No\+Terminals}}
+\index{Set\+No\+Terminals@{Set\+No\+Terminals}!Grammar@{Grammar}}
+\subsubsection{\texorpdfstring{Set\+No\+Terminals()}{SetNoTerminals()}}
+{\footnotesize\ttfamily void Grammar\+::\+Set\+No\+Terminals (\begin{DoxyParamCaption}\item[{std\+::set$<$ std\+::string $>$}]{collection\+\_\+noterminal }\end{DoxyParamCaption})}
+
+
+
+Método set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em (alphabet)} & Tipo de dato set de strings que contiene todos y cada uno de los simbolos\\
+\hline
+\end{DoxyParams}
+Set de la coleccion de simbolos no terminales de tipo set de strings . \mbox{\Hypertarget{classGrammar_a1b8915ce3d5677b2bf7272dd59b89512}\label{classGrammar_a1b8915ce3d5677b2bf7272dd59b89512}} 
+\index{Grammar@{Grammar}!write\+Grammar\+File@{write\+Grammar\+File}}
+\index{write\+Grammar\+File@{write\+Grammar\+File}!Grammar@{Grammar}}
+\subsubsection{\texorpdfstring{write\+Grammar\+File()}{writeGrammarFile()}}
+{\footnotesize\ttfamily void Grammar\+::write\+Grammar\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{\hyperlink{classGrammar}{Grammar} \&}]{grammar }\end{DoxyParamCaption})}
+
+
+
+Método Escritura de la Gramática. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em (filename)} & Tipo de dato string que contiene el nombre del fichero de salida \\
+\hline
+{\em (grammar)} & Referencia al objeto de la clase \hyperlink{classGrammar}{Grammar}\\
+\hline
+\end{DoxyParams}
+Se trata de el método que permite la escritura en un fichero de salida .gra 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+grammar.\+h\item 
+grammar.\+cc\end{DoxyCompactItemize}

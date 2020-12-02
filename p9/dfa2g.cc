@@ -1,13 +1,12 @@
 /**
  * \note PROJECT HEADER
- * \note Proyect: DFA
+ * \note Proyect: DFA to Grammar.
  * \note subject: Computabilidad y Algoritmia
  * \note Author: Alejandro Martín de León
  * \note Contact: alu0101015941@ull.edu.es
- * \note Date: 18/11/2020 
+ * \note Date: 2/12/2020 
  * \note Copyright 2020 Alejandro Martín de León
 */
-
 #include "dfa.h"
 #include "alphabet.h"
 
@@ -17,7 +16,7 @@
 #include <sstream>
 
 /**
- * \fn Boolean function that reveals if a string is a comment 
+ * @brief Boolean function that reveals if a string is a comment 
  */
 bool IsComment(std::string line){
   if (line[0] != '/' && line[1] != '/') {
@@ -29,7 +28,7 @@ bool IsComment(std::string line){
 }
 
 /**
- * \fn Boolean function that prints help to the user
+ * @brief Boolean function that prints help to the user
  */
 
 bool Help() {
@@ -41,7 +40,7 @@ bool Help() {
 }
 
 /**
- * \fn Function that controls some common executation errors, also calls to Help() function 
+ * @brief Function that controls some common executation errors, also calls to Help() function 
  */
 
 void Error(int parameter_number, std::string parameter_command) {
@@ -55,7 +54,7 @@ void Error(int parameter_number, std::string parameter_command) {
 }
 
 /**
- * \fn Function that Read a DFA File
+ * @brief Function that Read a DFA File
  */
 
 
@@ -112,7 +111,7 @@ void ReadDfaFile(std::string filename, Dfa& dfa, States& state, Transition& tran
 }
 
 /**
- * \fn Function which read the input file, container of the alphabets. 
+ * @brief Function which read the input file, container of the alphabets. 
  */
 
 void ReadInputFile(std::string filename, Alphabet& alphabet) {
@@ -128,7 +127,7 @@ void ReadInputFile(std::string filename, Alphabet& alphabet) {
 }
 
 /**
- * \fn Function that prints on the required output file  
+ * @brief Function that prints on the required output file  
  */
 /*
 void WriteOutputFile(std::string filename, Alphabet& alphabet, Dfa& dfa, States& state, Transition& transition) {
@@ -151,7 +150,7 @@ void WriteOutputFile(std::string filename, Alphabet& alphabet, Dfa& dfa, States&
 }
 */
 /**
- * \fn Main function 
+ * @brief Main function 
  */
 
 int main(int argc, char *argv[]) {

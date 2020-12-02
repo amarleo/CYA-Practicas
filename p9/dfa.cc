@@ -1,13 +1,12 @@
 /**
  * \note PROJECT HEADER
- * \note Proyect: DFA
+ * \note Proyect: DFA to Grammar.
  * \note subject: Computabilidad y Algoritmia
  * \note Author: Alejandro Martín de León
  * \note Contact: alu0101015941@ull.edu.es
- * \note Date: 18/11/2020 
+ * \note Date: 2/12/2020 
  * \note Copyright 2020 Alejandro Martín de León
 */
-
 #include <iostream>
 #include <string>
 #include "dfa.h"
@@ -57,6 +56,17 @@ bool Dfa::AlphabetIsAccepted(std::string alphabet, States& state, Transition& tr
   return false;
 }
 
+
+
+/**
+ * @brief Método Conversión de un DFA a una Gramática Regular
+ * @param (grammar) Se trata de una referencia a un objeto de la clase Grammar
+ *@param (state) Se trata de una referencia a un objeto de la clase States
+ *@param (transition) Se trata de una referencia a un objeto de la clase Transition
+ * 
+ * Método de la clase DFA que permite la conversión del Dfa leido desde el fichero
+ * en una Gramática Regular
+*/
 Grammar& Dfa::ConvertToGrammar(Grammar& grammar, States& state, Transition& transition) {
 
   std::string initial_noterminal = state.GetInitialState();
@@ -70,7 +80,6 @@ Grammar& Dfa::ConvertToGrammar(Grammar& grammar, States& state, Transition& tran
     grammar.SetAlphabet(alphabet);
     it++;
   }
-
   
   std::set<std::string> collection_noterminal = state.GetAllStates();
   grammar.SetNoTerminals(collection_noterminal);
@@ -80,9 +89,9 @@ Grammar& Dfa::ConvertToGrammar(Grammar& grammar, States& state, Transition& tran
   for (unsigned i = 0; i < transition.all_transitions_.size(); i++) {
     production = transition.all_transitions_[i].GetActualState() + " -> " + transition.all_transitions_[i].GetSymbol() + transition.all_transitions_[i].GetNextState();
     grammar.SetProductions(production);
-    //std::string right_side_rule = transition.all_transitions_[i].GetNextState();
+    std::string right_side_rule = transition.all_transitions_[i].GetNextState();
     /*
-    if ((transition.all_transitions_[i+1].GetActualState() != transition.all_transitions_[i].GetActualState()) && (state.IsAcceptState(right_side_rule))) {
+    if ( (state.IsAcceptState(right_side_rule))) {
       production = transition.all_transitions_[i].GetActualState() + " -> ~";
       grammar.SetProductions(production);
       grammar.IncreaseNumberProductions();
