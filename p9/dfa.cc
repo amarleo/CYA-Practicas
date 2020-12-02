@@ -77,7 +77,7 @@ Grammar& Dfa::ConvertToGrammar(Grammar& grammar, States& state, Transition& tran
 
   std::string production;
 
-  for (unsigned i = 0; i < transition.all_transitions_.size() ; i++) {
+  for (unsigned i = 0; i < transition.all_transitions_.size(); i++) {
     production = transition.all_transitions_[i].GetActualState() + " -> " + transition.all_transitions_[i].GetSymbol() + transition.all_transitions_[i].GetNextState();
     grammar.SetProductions(production);
     //std::string right_side_rule = transition.all_transitions_[i].GetNextState();
@@ -90,6 +90,5 @@ Grammar& Dfa::ConvertToGrammar(Grammar& grammar, States& state, Transition& tran
     */
     grammar.IncreaseNumberProductions();
   }
-  
   return grammar;
 }

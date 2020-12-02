@@ -85,13 +85,15 @@ void Grammar::writeGrammarFile(std::string filename, Grammar& grammar) {
       file << *it << "\n";
     }
     file << GetNoTerminalSize() << "\n";
-    for (it = GetCollectionNoTerminal().begin(); it != GetCollectionNoTerminal().end(); ++it) {
+    for (it = collection_noterminal_.begin(); it != collection_noterminal_.end(); it++) {
       file << *it << "\n";
+      std::cout << *it << std::endl;
     }
     file << grammar.initial_noterminal_ << "\n";
     file << GetNumberProducts() << "\n";
-    for (it = GetCollectionProductions().begin(); it != GetCollectionProductions().end(); ++it) {
+    for (it = collection_productions_.begin(); it != collection_productions_.end(); it++) {
       file << *it << "\n";
+      
     }
   }
 }
