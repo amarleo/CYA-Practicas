@@ -1,17 +1,19 @@
 #include "travel.h"
-#include "node.h"
+//#include "node.h"
 
 #include <iostream>
 #include <string>
 #include <fstream>
 #include <sstream>
 
-void ReadFile(std::string filename, Travel& travel) {
+
+void ReadFile(std::string filename, Travel& travel, Node& node) {
   std::fstream file;
   std::string line;
   std::stringstream converter;
-  float coste;
+  float cost;
   int number_nodes, actual_state, next_state;
+  bool first_time = false;
   file.open(filename);
     if (file.is_open()) {
       while(getline(file, line)) {
@@ -20,8 +22,14 @@ void ReadFile(std::string filename, Travel& travel) {
         //std::cout << number_nodes << std::endl;
         travel.setNumberNodes(number_nodes);
         while(!file.eof()) {
-            file >> actual_state >> next_state >> coste;
-            //std::cout << actual_state << " " << next_state << " " << coste << std::endl;
+
+          file >> actual_state >> next_state >> cost;
+          //std::cout << actual_state << " " << next_state << " " << coste << std::endl;
+          node.setNodes(actual_state, next_state, cost);
+          if (first_time == false) {
+            node.setFirstNode(actual_state);
+            first_time = true;
+          }
         }
       }
   }
@@ -37,6 +45,8 @@ if (argc == 1) {
 
   std::string infile = argv[1];
   Travel travel;
+  Node node;
 
-  ReadFile(infile, travel);
+  ReadFile(infile, travel, node);
+  travel.greedy(node);
 }
