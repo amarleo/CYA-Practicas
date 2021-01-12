@@ -12,6 +12,7 @@ void ReadFile(std::string filename, Travel& travel, Node& node) {
   std::string line;
   std::stringstream converter;
   float cost;
+  std::string string_cost;
   int number_nodes, actual_state, next_state;
   bool first_time = false;
   file.open(filename);
@@ -23,8 +24,8 @@ void ReadFile(std::string filename, Travel& travel, Node& node) {
         travel.setNumberNodes(number_nodes);
         while(!file.eof()) {
 
-          file >> actual_state >> next_state >> cost;
-          //std::cout << actual_state << " " << next_state << " " << coste << std::endl;
+          file >> actual_state >> next_state >> string_cost;
+          cost = std::stof(string_cost);
           node.setNodes(actual_state, next_state, cost);
           if (first_time == false) {
             node.setFirstNode(actual_state);
