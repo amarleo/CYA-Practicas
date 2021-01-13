@@ -19,4 +19,6 @@ class Node {
 
     int getVectorSize();
     int getFirstNode();
+
+    void writeVectorNodes(std::vector<std::pair<std::pair<int,int>,float>> vector_nodes);
 };

@@ -31,3 +31,9 @@ int Node::getFirstNode() {
 int Node::getVectorSize() {
   return nodes_vector_.size();
 }
+
+void writeVectorNodes(std::vector<std::pair<std::pair<int,int>,float>> vector_nodes) {
+  for (unsigned i = 0; i < vector_nodes.size(); i++) {
+      std::cout << "(" <<  vector_nodes[i].first.first << ", " <<vector_nodes[i].first.second << ", " << vector_nodes[i].second << ")" <<std::endl;
+  }
+}
