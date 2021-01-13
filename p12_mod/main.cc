@@ -31,9 +31,8 @@ void ReadFile(std::string filename, Travel& travel, Node& node) {
   std::string line;
   std::stringstream converter;
   float cost;
-  std::string string_cost, hora_mod;
-  std::vector<std::string> hora_vector;
-  int number_nodes, actual_state, next_state;
+  std::string string_cost;
+  int number_nodes, actual_state, next_state, hora_inicial, hora_final;
   bool first_time = false;
   file.open(filename);
     if (file.is_open()) {
@@ -42,10 +41,9 @@ void ReadFile(std::string filename, Travel& travel, Node& node) {
         converter >> number_nodes; // Número de nodos
         travel.setNumberNodes(number_nodes);
         while(!file.eof()) {
-          file >> actual_state >> next_state >> string_cost >> hora_mod; 
+          file >> actual_state >> next_state >> string_cost >> hora_inicial >> hora_final; 
           cost = std::stof(string_cost);  // Transforma el string en float
-          node.setNodes(actual_state, next_state, cost);
-          hora_vector.push_back(hora_mod);  
+          node.setNodes(actual_state, next_state, cost);  
           if (first_time == false) {
             node.setFirstNode(actual_state); 
             first_time = true;
