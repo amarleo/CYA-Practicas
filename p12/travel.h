@@ -7,7 +7,8 @@ class Travel {
   private:
     int number_nodes_;
   public:
-
+  Travel();
+  ~Travel();
   void setNumberNodes(int number_nodes);
   void greedy(Node& node);
 

@@ -7,7 +7,8 @@ class Node {
         int first_node_;
 
     public:
-
+    Node();
+    ~Node();
     void setNodes(int actual_node, int next_node, float cost); 
     void setFirstNode(int first_node);
     

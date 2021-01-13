@@ -11,6 +11,8 @@
 
 #include <iostream>
 
+Node::Node(){}
+Node::~Node(){}
 /**
 * @brief Método que introduce en el vector, los pares y flotantes indicados
 */

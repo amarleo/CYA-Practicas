@@ -14,6 +14,8 @@
 #include <limits>
 #include <vector>
 
+Travel::Travel(){}
+Travel::~Travel(){}
 
 /**
 * @brief Método que establece el número de nodos
